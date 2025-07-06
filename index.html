@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú - Cafetería del Hotel</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Menú de la Cafetería</h1>
+      <p>Seleccioná tus productos y mandá el pedido por WhatsApp</p>
+    </header>
+
+    <main>
+      <h2>Café Bar</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Código</th>
+            <th>Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Café jarrito / cortado</td><td>$2700</td><td>C01</td><td><input type="checkbox" value="C01"></td></tr>
+          <tr><td>Café chico</td><td>$2300</td><td>C02</td><td><input type="checkbox" value="C02"></td></tr>
+          <tr><td>Café con leche / lágrima</td><td>$3700</td><td>C03</td><td><input type="checkbox" value="C03"></td></tr>
+          <tr><td>Café con leche + 2 medialunas</td><td>$4600</td><td>C04</td><td><input type="checkbox" value="C04"></td></tr>
+          <tr><td>Lágrima + 2 medialunas</td><td>$4600</td><td>C05</td><td><input type="checkbox" value="C05"></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Bebidas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Código</th>
+            <th>Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sprite</td><td>$2600</td><td>B01</td><td><input type="checkbox" value="B01"></td></tr>
+          <tr><td>Coca Cola</td><td>$2600</td><td>B02</td><td><input type="checkbox" value="B02"></td></tr>
+          <tr><td>Fanta</td><td>$2600</td><td>B03</td><td><input type="checkbox" value="B03"></td></tr>
+          <tr><td>Pepsi</td><td>$2600</td><td>B04</td><td><input type="checkbox" value="B04"></td></tr>
+          <tr><td>Gatorade x 500</td><td>$2900</td><td>B05</td><td><input type="checkbox" value="B05"></td></tr>
+          <tr><td>Monster x 500</td><td>$2900</td><td>B06</td><td><input type="checkbox" value="B06"></td></tr>
+          <tr><td>Quilmes</td><td>$3000</td><td>B07</td><td><input type="checkbox" value="B07"></td></tr>
+          <tr><td>Agua</td><td>$1600</td><td>B08</td><td><input type="checkbox" value="B08"></td></tr>
+          <tr><td>Medida de Fernet</td><td>$3500</td><td>B09</td><td><input type="checkbox" value="B09"></td></tr>
+        </tbody>
+      </table>
+    </main>
+
+    <div class="whatsapp">
+      <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    function enviarPedido() {
+      const seleccionados = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
+      if (seleccionados.length === 0) {
+        alert("Por favor, seleccioná al menos un producto.");
+        return;
+      }
+
+      const codigos = seleccionados.map(cb => cb.value).join(", ");
+      const numero = "5493436472793";
+      const mensaje = encodeURIComponent("Hola! Quisiera pedir los siguientes productos del menú: " + codigos);
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
