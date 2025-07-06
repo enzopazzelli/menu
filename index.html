@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menú - Cafetería del Hotel</title>
   <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+  <div class="fondo"></div>
   <div class="container">
     <header>
       <h1>Menú de la Cafetería</h1>
-      <p>Seleccioná tus productos y mandá el pedido por WhatsApp</p>
+      <p>Seleccioná la cantidad y hacé tu pedido por WhatsApp</p>
     </header>
 
     <main>
@@ -20,16 +23,65 @@
           <tr>
             <th>Producto</th>
             <th>Precio</th>
-            <th>Código</th>
-            <th>Seleccionar</th>
+            <th>Cantidad</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Café jarrito / cortado</td><td>$2700</td><td>C01</td><td><input type="checkbox" value="C01"></td></tr>
-          <tr><td>Café chico</td><td>$2300</td><td>C02</td><td><input type="checkbox" value="C02"></td></tr>
-          <tr><td>Café con leche / lágrima</td><td>$3700</td><td>C03</td><td><input type="checkbox" value="C03"></td></tr>
-          <tr><td>Café con leche + 2 medialunas</td><td>$4600</td><td>C04</td><td><input type="checkbox" value="C04"></td></tr>
-          <tr><td>Lágrima + 2 medialunas</td><td>$4600</td><td>C05</td><td><input type="checkbox" value="C05"></td></tr>
+          <tr>
+            <td>Café jarrito / cortado</td>
+            <td>$2700</td>
+            <td>
+              <div class="cantidad" data-nombre="Café jarrito / cortado">
+                <button class="btn-menos">−</button>
+                <span class="contador">0</span>
+                <button class="btn-mas">+</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Café chico</td>
+            <td>$2300</td>
+            <td>
+              <div class="cantidad" data-nombre="Café chico">
+                <button class="btn-menos">−</button>
+                <span class="contador">0</span>
+                <button class="btn-mas">+</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Café con leche / lágrima</td>
+            <td>$3700</td>
+            <td>
+              <div class="cantidad" data-nombre="Café con leche / lágrima">
+                <button class="btn-menos">−</button>
+                <span class="contador">0</span>
+                <button class="btn-mas">+</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Café con leche + 2 medialunas</td>
+            <td>$4600</td>
+            <td>
+              <div class="cantidad" data-nombre="Café con leche + 2 medialunas">
+                <button class="btn-menos">−</button>
+                <span class="contador">0</span>
+                <button class="btn-mas">+</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Lágrima + 2 medialunas</td>
+            <td>$4600</td>
+            <td>
+              <div class="cantidad" data-nombre="Lágrima + 2 medialunas">
+                <button class="btn-menos">−</button>
+                <span class="contador">0</span>
+                <button class="btn-mas">+</button>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -39,23 +91,24 @@
           <tr>
             <th>Producto</th>
             <th>Precio</th>
-            <th>Código</th>
-            <th>Seleccionar</th>
+            <th>Cantidad</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Sprite</td><td>$2600</td><td>B01</td><td><input type="checkbox" value="B01"></td></tr>
-          <tr><td>Coca Cola</td><td>$2600</td><td>B02</td><td><input type="checkbox" value="B02"></td></tr>
-          <tr><td>Fanta</td><td>$2600</td><td>B03</td><td><input type="checkbox" value="B03"></td></tr>
-          <tr><td>Pepsi</td><td>$2600</td><td>B04</td><td><input type="checkbox" value="B04"></td></tr>
-          <tr><td>Gatorade x 500</td><td>$2900</td><td>B05</td><td><input type="checkbox" value="B05"></td></tr>
-          <tr><td>Monster x 500</td><td>$2900</td><td>B06</td><td><input type="checkbox" value="B06"></td></tr>
-          <tr><td>Quilmes</td><td>$3000</td><td>B07</td><td><input type="checkbox" value="B07"></td></tr>
-          <tr><td>Agua</td><td>$1600</td><td>B08</td><td><input type="checkbox" value="B08"></td></tr>
-          <tr><td>Medida de Fernet</td><td>$3500</td><td>B09</td><td><input type="checkbox" value="B09"></td></tr>
+          <tr><td>Sprite</td><td>$2600</td><td><div class="cantidad" data-nombre="Sprite"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Coca Cola</td><td>$2600</td><td><div class="cantidad" data-nombre="Coca Cola"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Fanta</td><td>$2600</td><td><div class="cantidad" data-nombre="Fanta"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Pepsi</td><td>$2600</td><td><div class="cantidad" data-nombre="Pepsi"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Gatorade x 500</td><td>$2900</td><td><div class="cantidad" data-nombre="Gatorade x 500"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Monster x 500</td><td>$2900</td><td><div class="cantidad" data-nombre="Monster x 500"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Quilmes</td><td>$3000</td><td><div class="cantidad" data-nombre="Quilmes"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Agua</td><td>$1600</td><td><div class="cantidad" data-nombre="Agua"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
+          <tr><td>Medida de Fernet</td><td>$3500</td><td><div class="cantidad" data-nombre="Medida de Fernet"><button class="btn-menos">−</button><span class="contador">0</span><button class="btn-mas">+</button></div></td></tr>
         </tbody>
       </table>
     </main>
+
+    <div id="contador-pedido">🛒 0 productos seleccionados</div>
 
     <div class="whatsapp">
       <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
@@ -63,20 +116,68 @@
   </div>
 
   <script>
-    function enviarPedido() {
-      const seleccionados = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
-      if (seleccionados.length === 0) {
-        alert("Por favor, seleccioná al menos un producto.");
-        return;
-      }
+  function actualizarContador() {
+    const items = document.querySelectorAll('.cantidad');
+    let total = 0;
+    items.forEach(item => {
+      const cantidad = parseInt(item.querySelector('.contador').textContent);
+      if (cantidad > 0) total += cantidad;
+    });
 
-      const codigos = seleccionados.map(cb => cb.value).join(", ");
-      const numero = "5493436472793";
-      const mensaje = encodeURIComponent("Hola! Quisiera pedir los siguientes productos del menú: " + codigos);
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
-
-      window.open(url, "_blank");
+    const contador = document.getElementById('contador-pedido');
+    if (total > 0) {
+      contador.style.display = "block";
+      contador.textContent = `🛒 ${total} producto${total > 1 ? 's' : ''} seleccionado${total > 1 ? 's' : ''}`;
+    } else {
+      contador.style.display = "none";
     }
-  </script>
+  }
+
+  document.querySelectorAll('.cantidad').forEach(cant => {
+    const menos = cant.querySelector('.btn-menos');
+    const mas = cant.querySelector('.btn-mas');
+    const contador = cant.querySelector('.contador');
+
+    menos.onclick = () => {
+      let valor = parseInt(contador.textContent);
+      if (valor > 0) contador.textContent = valor - 1;
+      actualizarContador();
+    };
+
+    mas.onclick = () => {
+      let valor = parseInt(contador.textContent);
+      contador.textContent = valor + 1;
+      actualizarContador();
+    };
+  });
+
+  function enviarPedido() {
+    const items = document.querySelectorAll('.cantidad');
+    let mensaje = "Hola! Quisiera pedir:\n";
+    let hayPedido = false;
+
+    items.forEach(item => {
+      const nombre = item.dataset.nombre;
+      const cantidad = parseInt(item.querySelector('.contador').textContent);
+      if (cantidad > 0) {
+        mensaje += `- ${cantidad}x ${nombre}\n`;
+        hayPedido = true;
+      }
+    });
+
+    if (!hayPedido) {
+      alert("Por favor, seleccioná al menos un producto.");
+      return;
+    }
+
+    const numero = "5493436472793";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+  }
+
+  // Mostrar contador al cargar si hay valores
+  window.onload = actualizarContador;
+</script>
+
 </body>
 </html>
