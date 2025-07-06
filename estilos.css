@@ -1,4 +1,5 @@
-/* estilos.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,19 +7,36 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f7f7f7;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
   color: #333;
-  padding: 20px;
+}
+
+.fondo {
+  background-image: url('fondo.jpg'); /* Ajustá si la carpeta es distinta */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  position: fixed;
+  inset: 0;
+  z-index: -2;
 }
 
 .container {
-  max-width: 850px;
-  margin: auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.96);
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.container:hover {
+  transform: scale(1.005);
 }
 
 header {
@@ -28,96 +46,139 @@ header {
 
 header h1 {
   font-size: 2.2em;
-  color: #444;
+  color: #222;
 }
 
 header p {
-  color: #666;
-  font-size: 1em;
+  color: #555;
   margin-top: 10px;
 }
 
 h2 {
-  margin-top: 30px;
+  margin-top: 50px;
+  font-size: 1.4em;
+  border-left: 4px solid #25d366;
+  padding-left: 12px;
   color: #222;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
 }
 
+/* Tablas */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
-  padding: 14px;
-  border-bottom: 1px solid #eaeaea;
+  padding: 16px;
   text-align: center;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 th {
-  background-color: #f0f0f0;
+  background: linear-gradient(to right, #f4f4f4, #f9f9f9);
   font-weight: 600;
 }
 
-tr:hover {
-  background-color: #fcfcfc;
+/* Cantidad */
+.cantidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
+.btn-menos, .btn-mas {
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-menos:hover, .btn-mas:hover {
+  filter: brightness(1.1);
+}
+
+.contador {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.btn-mas:active ~ .contador,
+.btn-menos:active ~ .contador {
+  transform: scale(1.1);
+}
+
+/* Contador de selección */
+#contador-pedido {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 500;
+  display: none;
+}
+
+/* WhatsApp */
 .whatsapp {
   text-align: center;
+  margin-top: 20px;
 }
 
-.whatsapp p {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.whatsapp a {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #25d366;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp a:hover {
-  background-color: #1ebe5d;
-}
-/* Estilos anteriores + este bloque para el botón */
 .whatsapp button {
-  background-color: #25D366;
+  background: linear-gradient(to right, #25d366, #1ebe5d);
   color: white;
   font-size: 16px;
-  border: none;
-  border-radius: 6px;
   padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .whatsapp button:hover {
   background-color: #1ebe5d;
 }
+#contador-pedido {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 500;
+  display: none;
+}
 
 
 /* Responsive */
 @media (max-width: 600px) {
-  table, th, td {
+  .container {
+    padding: 20px;
+  }
+
+  .btn-menos, .btn-mas {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .contador {
     font-size: 14px;
   }
 
-  header h1 {
-    font-size: 1.5em;
-  }
-
-  .container {
-    padding: 20px;
+  table th, table td {
+    font-size: 14px;
+    padding: 10px;
   }
 }
